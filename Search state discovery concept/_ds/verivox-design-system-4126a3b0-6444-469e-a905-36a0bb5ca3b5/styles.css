@@ -1,0 +1,10 @@
+/* Verivox Design System — global entry point.
+   Consumers link this single file; everything reachable from here ships. */
+@import "./tokens/fonts.css";
+@import "./tokens/palette.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/effects.css";
+@import "./tokens/icons.css";
+@import "./tokens/base.css";

@@ -1,0 +1,25 @@
+/* Verivox effects: shadows, gradients, z-index, breakpoints. */
+:root {
+  --ds-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  --ds-box-shadow-primary-keyboard-focus: 0 0 0 0.0625rem #000, 0 0 0 0.1875rem var(--ds-color-white), 0 0 0 0.3125rem #000;
+  --ds-box-shadow-secondary-keyboard-focus: 0 0 0 0.125rem #000, 0 0 0 0.3125rem var(--ds-color-white);
+
+  /* Brand gradients — used very sparingly, e.g. promo surfaces */
+  --ds-gradient-primary: linear-gradient(225deg, #fa9a0a 0%, #ff5600 50%, #cc4400 100%); /* @kind color */
+  --ds-gradient-secondary: linear-gradient(225deg, #fbffba 0%, #ff9966 50%, #ff7733 100%); /* @kind color */
+
+  /* Breakpoints */
+  --ds-breakpoint-xs: 360px;
+  --ds-breakpoint-s: 768px;
+  --ds-breakpoint-m: 980px;
+  --ds-breakpoint-l: 1280px;
+
+  /* Z-index ladder */
+  --ds-zindex-tooltip: 1000; /* @kind other */
+  --ds-zindex-dropdown: 1010; /* @kind other */
+  --ds-zindex-sticky: 1020; /* @kind other */
+  --ds-zindex-fixed: 1030; /* @kind other */
+  --ds-zindex-modal-backdrop: 1040; /* @kind other */
+  --ds-zindex-modal: 1050; /* @kind other */
+  --ds-zindex-popover: 1060; /* @kind other */
+}

@@ -1,0 +1,113 @@
+/* Verivox semantic color tokens — map intent onto the raw palette.
+   Two layers: --ds-color-* (named roles) and the role aliases
+   (--ds-background-*, --ds-border-*, --ds-icon-*, --ds-font-*, --ds-hover-*). */
+:root {
+  /* Named color roles */
+  --ds-color-brand-regular: var(--ds-palette-orange50);
+  --ds-color-brand-light: var(--ds-palette-orange5);
+  --ds-color-white: var(--ds-palette-white);
+
+  --ds-color-neutral80: var(--ds-palette-grey80);
+  --ds-color-neutral70: var(--ds-palette-grey70);
+  --ds-color-neutral60: var(--ds-palette-grey60);
+  --ds-color-neutral40: var(--ds-palette-grey40);
+  --ds-color-neutral20: var(--ds-palette-grey20);
+  --ds-color-neutral5: var(--ds-palette-grey5);
+
+  --ds-color-info-regular: var(--ds-palette-blue50);
+  --ds-color-info-light: var(--ds-palette-blue5);
+  --ds-color-info-dark: var(--ds-palette-blue70);
+
+  --ds-color-success-regular: var(--ds-palette-green60);
+  --ds-color-success-light: var(--ds-palette-green5);
+  --ds-color-success-dark: var(--ds-palette-green70);
+
+  --ds-color-sustainability-regular: var(--ds-palette-green60);
+  --ds-color-sustainability-light: var(--ds-palette-green5);
+
+  --ds-color-warning-regular: var(--ds-palette-gold50);
+  --ds-color-warning-light: var(--ds-palette-gold5);
+  --ds-color-warning-dark: var(--ds-palette-gold80);
+
+  --ds-color-danger-regular: var(--ds-palette-red50);
+  --ds-color-danger-light: var(--ds-palette-red5);
+  --ds-color-danger-dark: var(--ds-palette-red60);
+  --ds-color-error-regular: var(--ds-palette-red60);
+  --ds-color-error-dark: var(--ds-palette-red80);
+
+  --ds-color-promo-brand: var(--ds-color-brand-regular);
+  --ds-color-promo-light: var(--ds-palette-yellow50);
+  --ds-color-promo-dark: var(--ds-palette-violet50);
+
+  /* Text */
+  --ds-font-text-neutral-regular: var(--ds-color-neutral80);
+  --ds-font-text-brand-regular: var(--ds-color-brand-regular);
+  --ds-font-text-inverted: var(--ds-color-white);
+  --ds-font-text-danger: var(--ds-color-danger-dark);
+  --ds-font-text-info: var(--ds-color-info-dark);
+  --ds-font-text-success: var(--ds-color-success-dark);
+  --ds-font-text-warning: var(--ds-color-warning-dark);
+  --ds-font-neutral-disabled: var(--ds-color-neutral60);
+
+  /* Headlines */
+  --ds-font-headline-neutral-regular: var(--ds-color-neutral70);
+  --ds-font-headline-brand-regular: var(--ds-color-brand-regular);
+  --ds-font-headline-inverted: var(--ds-color-white);
+  --ds-font-headline-danger: var(--ds-color-danger-dark);
+  --ds-font-headline-info: var(--ds-color-info-dark);
+  --ds-font-headline-success: var(--ds-color-success-dark);
+  --ds-font-headline-warning: var(--ds-color-warning-dark);
+
+  /* Backgrounds */
+  --ds-background-brand-regular: var(--ds-color-brand-regular);
+  --ds-background-brand-light: var(--ds-color-brand-light);
+  --ds-background-neutral-dark: var(--ds-color-neutral70);
+  --ds-background-neutral-regular: var(--ds-color-neutral60);
+  --ds-background-neutral-light: var(--ds-color-neutral5);
+  --ds-background-neutral-muted: var(--ds-color-neutral5);
+  --ds-background-white: var(--ds-color-white);
+  --ds-background-info-regular: var(--ds-color-info-regular);
+  --ds-background-info-light: var(--ds-color-info-light);
+  --ds-background-info-dark: var(--ds-color-info-dark);
+  --ds-background-sustainability-regular: var(--ds-color-sustainability-regular);
+  --ds-background-sustainability-light: var(--ds-color-sustainability-light);
+  --ds-background-success-regular: var(--ds-color-success-regular);
+  --ds-background-success-light: var(--ds-color-success-light);
+  --ds-background-success-dark: var(--ds-color-success-dark);
+  --ds-background-warning-regular: var(--ds-color-warning-regular);
+  --ds-background-warning: var(--ds-color-warning-light);
+  --ds-background-danger-regular: var(--ds-color-danger-regular);
+  --ds-background-danger: var(--ds-color-danger-light);
+  --ds-background-promo-brand: var(--ds-color-promo-brand);
+  --ds-background-promo-light: var(--ds-color-promo-light);
+  --ds-background-promo-dark: var(--ds-color-promo-dark);
+
+  /* Borders */
+  --ds-border-brand-regular: var(--ds-color-brand-regular);
+  --ds-border-neutral-regular: var(--ds-color-neutral20);
+  --ds-border-neutral-muted: var(--ds-color-neutral20);
+  --ds-border-white: var(--ds-color-white);
+  --ds-border-success-regular: var(--ds-color-success-regular);
+  --ds-border-sustainability-regular: var(--ds-color-sustainability-regular);
+  --ds-border-info: var(--ds-color-info-regular);
+  --ds-border-danger: var(--ds-color-danger-regular);
+  --ds-border-warning: var(--ds-color-warning-regular);
+
+  /* Icons */
+  --ds-icon-brand-regular: var(--ds-color-brand-regular);
+  --ds-icon-neutral-regular: var(--ds-color-neutral80);
+  --ds-icon-neutral-muted: var(--ds-color-neutral40);
+  --ds-icon-neutral-light: var(--ds-color-neutral5);
+  --ds-icon-inverted: var(--ds-color-white);
+  --ds-icon-info-regular: var(--ds-color-info-regular);
+  --ds-icon-success-regular: var(--ds-color-success-regular);
+  --ds-icon-sustainability-regular: var(--ds-color-sustainability-regular);
+  --ds-icon-warning-regular: var(--ds-color-warning-regular);
+  --ds-icon-danger-regular: var(--ds-color-danger-regular);
+
+  /* Hover states */
+  --ds-hover-brand-regular: var(--ds-palette-orange60);
+  --ds-hover-neutral-dark: var(--ds-color-neutral70);
+  --ds-hover-neutral-regular: var(--ds-color-neutral60);
+  --ds-hover-neutral-light: var(--ds-color-neutral20);
+}

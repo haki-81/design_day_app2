@@ -1,0 +1,35 @@
+/* Webfont declarations. Selawik is Verivox's UI typeface (an open,
+   Segoe-UI-metric-compatible face by Microsoft). VerivoxIcons is the
+   brand icon font (404 glyphs). Binaries are bundled under assets/fonts/. */
+
+@font-face {
+  font-family: "Selawik";
+  src: url("../assets/fonts/selawik-100.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Selawik";
+  src: url("../assets/fonts/selawik-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Selawik";
+  src: url("../assets/fonts/selawik-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VerivoxIcons";
+  src: url("../assets/fonts/VerivoxIcons.woff2") format("woff2"),
+       url("../assets/fonts/VerivoxIcons.woff") format("woff"),
+       url("../assets/fonts/VerivoxIcons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

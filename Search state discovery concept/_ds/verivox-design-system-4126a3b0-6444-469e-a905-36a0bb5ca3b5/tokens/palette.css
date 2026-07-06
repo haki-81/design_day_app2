@@ -1,0 +1,78 @@
+/* Verivox raw color palette — primitive scale tokens.
+   Values mirror @vx/ds-tokens exactly (extracted from ds-components 7.26.0). */
+:root {
+  /* Orange — the Verivox brand hue ("International Orange") */
+  --ds-palette-orange90: #331100;
+  --ds-palette-orange80: #662200;
+  --ds-palette-orange70: #993300;
+  --ds-palette-orange60: #cc4400;
+  --ds-palette-orange50: #ff5600; /* brand */
+  --ds-palette-orange40: #ff7733;
+  --ds-palette-orange30: #ff9966;
+  --ds-palette-orange20: #ffbb99;
+  --ds-palette-orange10: #ffddcc;
+  --ds-palette-orange5: #fff3ed;
+
+  /* Grey — neutral scale (warm-leaning) */
+  --ds-palette-grey90: #0c0c0c;
+  --ds-palette-grey80: #343231;
+  --ds-palette-grey70: #4e4b49;
+  --ds-palette-grey60: #686462;
+  --ds-palette-grey50: #837e7b;
+  --ds-palette-grey40: #9b9795;
+  --ds-palette-grey30: #b4b1af;
+  --ds-palette-grey20: #cdcbca;
+  --ds-palette-grey10: #e6e5e4;
+  --ds-palette-grey5: #f6f6f6;
+  --ds-palette-white: #ffffff;
+
+  /* Green — success & sustainability */
+  --ds-palette-green90: #0e2315;
+  --ds-palette-green80: #1c472b;
+  --ds-palette-green70: #2a6a40;
+  --ds-palette-green60: #388e56;
+  --ds-palette-green50: #47b26c;
+  --ds-palette-green40: #6bc189;
+  --ds-palette-green30: #90d0a6;
+  --ds-palette-green20: #b5e0c4;
+  --ds-palette-green10: #daefe1;
+  --ds-palette-green5: #f2faf5;
+
+  /* Blue — informational */
+  --ds-palette-blue90: #0b1b2a;
+  --ds-palette-blue80: #183753;
+  --ds-palette-blue70: #24547c;
+  --ds-palette-blue60: #306fa5;
+  --ds-palette-blue50: #3d8ace;
+  --ds-palette-blue40: #63a2d8;
+  --ds-palette-blue30: #8abae2;
+  --ds-palette-blue20: #b1d0ec;
+  --ds-palette-blue10: #d7e7f6;
+  --ds-palette-blue5: #f1f7fc;
+
+  /* Red — danger / error */
+  --ds-palette-red90: #1a0004;
+  --ds-palette-red80: #660011;
+  --ds-palette-red70: #99001a;
+  --ds-palette-red60: #cc0022;
+  --ds-palette-red50: #ff002b;
+  --ds-palette-red40: #ff4d6b;
+  --ds-palette-red30: #ff8095;
+  --ds-palette-red20: #ffb2bf;
+  --ds-palette-red10: #ffccd5;
+  --ds-palette-red5: #fff2f2;
+
+  /* Gold — warning */
+  --ds-palette-gold90: #4d4506;
+  --ds-palette-gold80: #625808;
+  --ds-palette-gold50: #f5dd14;
+  --ds-palette-gold5: #fcf5b8;
+
+  /* Violet & Yellow — promo accents (used sparingly) */
+  --ds-palette-violet90: #6309b2;
+  --ds-palette-violet50: #8e0dff;
+  --ds-palette-violet5: #e8cfff;
+  --ds-palette-yellow90: #f5dd14;
+  --ds-palette-yellow50: #f3ff19;
+  --ds-palette-yellow5: #fbffba;
+}

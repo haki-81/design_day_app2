@@ -1,0 +1,33 @@
+/* Verivox typography tokens. Type face is Selawik (Segoe-metric-compatible),
+   loaded in fonts.css. Three weights: 100 / 400 / 700. */
+:root {
+  --ds-font-family-base: "Selawik", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ds-font-family-icons: "VerivoxIcons";
+
+  /* Font sizes (px) */
+  --ds-font-size-xs: 11px;
+  --ds-font-size-s: 13px;
+  --ds-font-size-m: 16px;   /* body default */
+  --ds-font-size-l: 21px;
+  --ds-font-size-xl: 28px;
+  --ds-font-size-xxl: 38px;
+
+  /* Weights */
+  --ds-font-weight-s: 100;  /* Selawik Light */
+  --ds-font-weight-m: 400;  /* Regular */
+  --ds-font-weight-l: 700;  /* Bold */
+
+  /* Line heights (unitless, paired roughly to size steps) */
+  --ds-line-height-xxs: 1.2632;
+  --ds-line-height-xs: 1.4286;
+  --ds-line-height-s: 1.4545;
+  --ds-line-height-m: 1.5;
+  --ds-line-height-l: 1.5238;
+  --ds-line-height-xl: 1.5385;
+
+  /* Letter spacing */
+  --ds-letter-spacing-xxs: -0.3px;
+  --ds-letter-spacing-xs: -0.2px;
+  --ds-letter-spacing-s: -0.1px;
+  --ds-letter-spacing-m: 0.1px;
+}

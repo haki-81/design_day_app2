@@ -1,0 +1,39 @@
+/* Verivox spacing, grid, radius & stroke tokens.
+   The system is built on an 8px grid unit. */
+:root {
+  --ds-grid-unit: 8px;
+  --ds-grid-size-single: 8px;
+  --ds-grid-size-double: 16px;
+  --ds-grid-size-triple: 24px;
+  --ds-grid-size-quad: 32px;
+
+  /* Spacing scale */
+  --ds-spacing-none: 0px;
+  --ds-spacing-xxxs: 4px;
+  --ds-spacing-xxs: 8px;
+  --ds-spacing-xs: 16px;
+  --ds-spacing-s: 24px;
+  --ds-spacing-m: 32px;
+  --ds-spacing-l: 40px;
+  --ds-spacing-xl: 48px;
+  --ds-spacing-xxl: 56px;
+  --ds-spacing-xxxl: 64px;
+  --ds-spacing-xxxxl: 72px;
+  --ds-spacing-xxxxxl: 80px;
+
+  /* Corner radii — Verivox uses tight radii (max 5px) */
+  --ds-radius-none: 0px;
+  --ds-radius-m: 2px;
+  --ds-radius-l: 3px;
+  --ds-radius-xl: 5px;
+
+  /* Stroke widths — also used as the canonical radius scale in components */
+  --ds-stroke-m: 1px;
+  --ds-stroke-l: 2px;
+  --ds-stroke-xl: 3px;
+  --ds-stroke-xxl: 4px;
+
+  /* Component heights */
+  --ds-component-height-button-s: 40px;
+  --ds-component-height-button-m: 48px;
+}

@@ -1,0 +1,36 @@
+/* Base element defaults applied on top of the token layer.
+   Verivox sets the Selawik face, 16px body, warm-grey text on white. */
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ds-font-family-base);
+  font-size: var(--ds-font-size-m);
+  font-weight: var(--ds-font-weight-m);
+  line-height: var(--ds-line-height-m);
+  color: var(--ds-font-text-neutral-regular);
+  background: var(--ds-background-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ds-font-headline-neutral-regular);
+  font-weight: var(--ds-font-weight-l);
+  line-height: var(--ds-line-height-xxs);
+  margin: 0 0 var(--ds-spacing-xs);
+}
+h1 { font-size: var(--ds-font-size-xxl); letter-spacing: var(--ds-letter-spacing-xs); }
+h2 { font-size: var(--ds-font-size-xl); letter-spacing: var(--ds-letter-spacing-xs); }
+h3 { font-size: var(--ds-font-size-l); }
+h4 { font-size: var(--ds-font-size-m); }
+
+a {
+  color: var(--ds-font-text-brand-regular);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+* { box-sizing: border-box; }

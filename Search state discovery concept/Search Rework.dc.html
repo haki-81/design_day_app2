@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/palette.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/icons.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/styles.css">
+  <script src="_ds/verivox-design-system-4126a3b0-6444-469e-a905-36a0bb5ca3b5/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    @keyframes vxspin{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important}}
+  </style>
+</helmet>
+<div style="min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:18px;padding:26px 16px 40px;background:var(--ds-color-neutral5);font-family:var(--ds-font-family-base)">
+  <div style="width:390px;max-width:100%;height:812px;box-sizing:border-box;background:#fff;border:1px solid var(--ds-color-neutral20);border-radius:34px;box-shadow:0 12px 40px rgba(0,0,0,.18);overflow:hidden;display:flex;flex-direction:column;position:relative">
+
+    <div style="height:36px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:13px;font-weight:700;color:var(--ds-color-neutral80)">
+      <span>12:30</span>
+      <span style="display:flex;gap:7px;align-items:center">
+        <span style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid var(--ds-color-neutral80);display:inline-block"></span>
+        <span style="display:inline-flex;align-items:flex-end;gap:1px;height:11px">
+          <span style="width:3px;height:5px;background:var(--ds-color-neutral80)"></span>
+          <span style="width:3px;height:8px;background:var(--ds-color-neutral80)"></span>
+          <span style="width:3px;height:11px;background:var(--ds-color-neutral80)"></span>
+        </span>
+        <span style="width:20px;height:11px;border:1.5px solid var(--ds-color-neutral80);border-radius:2px;position:relative;display:inline-block">
+          <span style="position:absolute;top:1.5px;left:1.5px;bottom:1.5px;width:12px;background:var(--ds-color-neutral80)"></span>
+        </span>
+      </span>
+    </div>
+
+    <sc-if value="{{ isExited }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;display:flex;flex-direction:column;background:#fff;min-height:0">
+        <div style="padding:16px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ds-color-neutral20)">
+          <x-import component-from-global-scope="VerivoxDesignSystem_4126a3.Logo" size="26" hint-size="120px,28px"></x-import>
+          <span class="icn-user-outlined" style="font-size:24px;color:var(--ds-color-neutral80)"></span>
+        </div>
+        <div style="padding:18px">
+          <div onClick="{{ reopen }}" style="display:flex;align-items:center;gap:10px;border:1px solid var(--ds-color-neutral20);border-radius:3px;padding:13px 14px;color:var(--ds-color-neutral60);cursor:pointer" style-hover="border-color:var(--ds-color-brand-regular)">
+            <span class="icn-search-outlined" style="font-size:20px;color:var(--ds-color-neutral40)"></span>
+            <span style="font-size:16px">Vergleich suchen</span>
+          </div>
+          <div style="font-size:13px;font-weight:700;color:var(--ds-color-neutral70);margin:26px 0 14px">Letzte Ansicht</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="height:132px;background:var(--ds-color-neutral5);border-radius:5px"></div>
+            <div style="height:20px;width:70%;background:var(--ds-color-neutral5);border-radius:3px"></div>
+            <div style="height:20px;width:90%;background:var(--ds-color-neutral5);border-radius:3px"></div>
+            <div style="height:20px;width:55%;background:var(--ds-color-neutral5);border-radius:3px"></div>
+            <div style="height:64px;background:var(--ds-color-neutral5);border-radius:5px"></div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ inSearch }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:none;display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--ds-color-neutral20);background:#fff">
+        <span onClick="{{ back }}" class="icn-angle-left-outlined" style="font-size:22px;color:var(--ds-color-neutral80);cursor:pointer;flex:none"></span>
+        <input type="text" value="{{ query }}" onChange="{{ onInput }}" placeholder="Vergleich suchen" autoFocus="{{ true }}" style="flex:1;min-width:0;border:none;outline:none;font-size:17px;color:var(--ds-color-neutral80);background:transparent;font-family:var(--ds-font-family-base)" />
+        <sc-if value="{{ showClose }}" hint-placeholder-val="{{ false }}">
+          <span onClick="{{ clearQuery }}" class="icn-close-outlined" style="font-size:20px;color:var(--ds-color-neutral60);cursor:pointer;flex:none"></span>
+        </sc-if>
+      </div>
+
+      <div style="flex:1;overflow-y:auto;background:#fff;min-height:0">
+
+        <sc-if value="{{ isInitial }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:4px 16px 24px">
+            <sc-if value="{{ showRecent }}" hint-placeholder-val="{{ true }}">
+              <div style="padding-top:14px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:11px">
+                  <span style="font-size:13px;font-weight:700;color:var(--ds-color-neutral70)">Zuletzt gesucht</span>
+                  <span onClick="{{ clearHistory }}" style="font-size:13px;color:var(--ds-color-brand-regular);cursor:pointer" style-hover="text-decoration:underline">löschen</span>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                  <sc-for list="{{ recentChips }}" as="chip" hint-placeholder-count="4">
+                    <div onClick="{{ chip.go }}" style="display:inline-flex;align-items:center;gap:6px;max-width:328px;padding:6px 12px;border:1px solid var(--ds-color-brand-regular);border-radius:20px;color:var(--ds-color-brand-regular);font-size:13px;cursor:pointer;white-space:nowrap;overflow:hidden" style-hover="background:var(--ds-color-brand-light)">
+                      <span class="icn-refresh-outlined" style="font-size:13px;flex:none"></span>
+                      <span style="overflow:hidden;text-overflow:ellipsis">{{ chip.label }}</span>
+                    </div>
+                  </sc-for>
+                  <sc-if value="{{ showMoreChip }}" hint-placeholder-val="{{ true }}">
+                    <div onClick="{{ expandMore }}" style="display:inline-flex;align-items:center;padding:6px 14px;border:1px solid var(--ds-color-neutral20);border-radius:20px;color:var(--ds-color-neutral70);font-size:13px;cursor:pointer" style-hover="background:var(--ds-color-neutral5)">+{{ moreCount }} mehr</div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="font-size:13px;font-weight:700;color:var(--ds-color-neutral70);margin:20px 0 2px">Vorgeschlagene Suchen</div>
+            <sc-for list="{{ suggested }}" as="s" hint-placeholder-count="1">
+              <div onClick="{{ s.go }}" style="display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--ds-color-neutral20);cursor:pointer" style-hover="background:var(--ds-color-neutral5)">
+                <span class="icn-{{ s.icon }}" style="font-size:22px;color:var(--ds-color-neutral80);width:24px;text-align:center;flex:none"></span>
+                <span style="font-size:16px;color:var(--ds-color-neutral80)">{{ s.label }}</span>
+              </div>
+            </sc-for>
+
+            <div style="font-size:13px;font-weight:700;color:var(--ds-color-neutral70);margin:20px 0 2px">Jetzt im Trend</div>
+            <sc-for list="{{ trending }}" as="s" hint-placeholder-count="2">
+              <div onClick="{{ s.go }}" style="display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--ds-color-neutral20);cursor:pointer" style-hover="background:var(--ds-color-neutral5)">
+                <span class="icn-{{ s.icon }}" style="font-size:22px;color:var(--ds-color-neutral80);width:24px;text-align:center;flex:none"></span>
+                <span style="font-size:16px;color:var(--ds-color-neutral80)">{{ s.label }}</span>
+              </div>
+            </sc-for>
+
+            <div onClick="{{ noop }}" style="margin:24px 0 6px;border-radius:5px;overflow:hidden;background:linear-gradient(150deg,#ff8a2a 0%,var(--ds-color-brand-regular) 55%,#e64d00 100%);color:#fff;cursor:pointer">
+              <div style="padding:9px 16px;font-size:11px;font-weight:700;letter-spacing:.6px;border-bottom:1px solid rgba(255,255,255,.28)">EMPFOHLEN</div>
+              <div style="padding:16px;display:flex;gap:14px;align-items:flex-start">
+                <span class="icn-shield-checked-outlined" style="font-size:30px;flex:none;margin-top:2px"></span>
+                <div style="flex:1">
+                  <div style="font-size:17px;font-weight:700;margin-bottom:6px">Versicherungsbedarfanalyse</div>
+                  <div style="font-size:13px;line-height:1.45;color:rgba(255,255,255,.92)">Finden Sie in 3 Minuten heraus, welche Versicherungen Sie wirklich brauchen.</div>
+                  <div style="text-align:right;font-weight:700;font-size:15px;margin-top:14px">Jetzt starten</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isTyping }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--ds-color-neutral70);padding:16px 16px 6px">{{ g.name }}</div>
+                <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="2">
+                  <div onClick="{{ it.go }}" style="display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--ds-color-neutral20);cursor:pointer" style-hover="background:var(--ds-color-neutral5)">
+                    <span class="icn-{{ it.icon }}" style="font-size:22px;color:var(--ds-color-neutral80);width:24px;text-align:center;flex:none"></span>
+                    <span style="font-size:16px;color:var(--ds-color-neutral80)"><sc-for list="{{ it.segs }}" as="seg" hint-placeholder-count="1"><span style="{{ seg.style }}">{{ seg.text }}</span></sc-for></span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isNoResult }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:64px;gap:22px">
+            <img src="assets/Search.svg" alt="" style="width:132px;height:132px" />
+            <div style="font-size:13px;color:var(--ds-color-neutral60)">Keine Ergebnisse gefunden</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:80px;gap:20px">
+            <div style="width:44px;height:44px;border:4px solid var(--ds-color-neutral20);border-top-color:var(--ds-color-brand-regular);border-radius:50%;animation:vxspin .8s linear infinite"></div>
+            <div style="font-size:14px;color:var(--ds-color-neutral60)">Ergebnisse werden geladen …</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;padding:70px 28px 0;gap:18px;text-align:center">
+            <span class="icn-error-filled" style="font-size:54px;color:var(--ds-color-danger-regular)"></span>
+            <div style="font-size:18px;font-weight:700;color:var(--ds-color-neutral70)">Keine Internetverbindung</div>
+            <div style="font-size:14px;color:var(--ds-color-neutral60);line-height:1.45">Ihre Suche konnte nicht geladen werden. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut.</div>
+            <div onClick="{{ retry }}" style="margin-top:6px;background:var(--ds-color-brand-regular);color:#fff;font-weight:700;font-size:15px;padding:12px 24px;border-radius:3px;cursor:pointer" style-hover="background:var(--ds-hover-brand-regular)">Erneut versuchen</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isResults }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="padding:16px 16px 6px">
+              <div style="background:var(--ds-background-success-light);border:1px solid var(--ds-border-success-regular);border-radius:3px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;color:var(--ds-color-success-dark);font-size:14px;line-height:1.4">
+                <span class="icn-check-circle-filled" style="font-size:20px;flex:none;color:var(--ds-color-success-regular)"></span>
+                <span><b>{{ resultCount }}</b> Ergebnisse für „{{ resultTerm }}"</span>
+              </div>
+            </div>
+            <sc-for list="{{ resultList }}" as="it" hint-placeholder-count="3">
+              <div onClick="{{ it.go }}" style="display:flex;align-items:center;gap:14px;padding:15px 16px;border-bottom:1px solid var(--ds-color-neutral20);cursor:pointer" style-hover="background:var(--ds-color-neutral5)">
+                <span class="icn-{{ it.icon }}" style="font-size:22px;color:var(--ds-color-neutral80);width:24px;text-align:center;flex:none"></span>
+                <span style="flex:1;font-size:16px;color:var(--ds-color-neutral80)">{{ it.label }}</span>
+                <span class="icn-angle-right-outlined" style="font-size:16px;color:var(--ds-color-neutral40);flex:none"></span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+      </div>
+
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:760,&quot;height&quot;:940},&quot;startWithHistory&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Szenario&quot;},&quot;networkOnline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Szenario&quot;}}">
+class Component extends DCLogic {
+  state = {
+    query: '',
+    phase: 'input',
+    committed: '',
+    shift: false,
+    exited: false,
+    expandedRecent: false,
+    hasHistory: this.props.startWithHistory !== undefined ? this.props.startWithHistory : true,
+    online: this.props.networkOnline !== undefined ? this.props.networkOnline : true,
+    recent: ['Ökostrom wechseln', 'Tahnsjsfjk', 'Gasverg', 'Zahnzusatzversicherung', 'Kfz Versicherung', 'Hausratversicherung', 'Handytarif'],
+  };
+
+  get cats() {
+    return [
+      { name: 'Energie', items: [
+        { label: 'Strom mit Wechselbonus', icon: 'discount-percent-outlined' },
+        { label: 'Ökostrom-Anbieter wechseln', icon: 'leaf-outlined' },
+        { label: 'Gasvergleich', icon: 'flash-outlined' },
+        { label: 'Stromtarife vergleichen', icon: 'flash-outlined' },
+      ]},
+      { name: 'Versicherung', items: [
+        { label: 'Reiseversicherung', icon: 'globe-outlined' },
+        { label: 'Zahnzusatzversicherung', icon: 'tooth-outlined' },
+        { label: 'Kfz Versicherung', icon: 'car-shield-outlined' },
+        { label: 'Hausratversicherung', icon: 'house-shield-outlined' },
+        { label: 'Haftpflichtversicherung', icon: 'shield-outlined' },
+      ]},
+      { name: 'Telekommunikation', items: [
+        { label: 'Glasfaser-Verfügbarkeit prüfen', icon: 'fiberglass-outlined' },
+        { label: 'Handytarif vergleichen', icon: 'smartphone-outlined' },
+        { label: 'DSL Vergleich', icon: 'globe-outlined' },
+      ]},
+    ];
+  }
+
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  componentDidUpdate(prev) {
+    if (prev.startWithHistory !== this.props.startWithHistory && this.props.startWithHistory !== undefined)
+      this.setState({ hasHistory: this.props.startWithHistory });
+    if (prev.networkOnline !== this.props.networkOnline && this.props.networkOnline !== undefined)
+      this.setState({ online: this.props.networkOnline });
+  }
+
+  segs(label, q) {
+    const t = (q || '').trim().toLowerCase();
+    if (!t) return [{ text: label, style: {} }];
+    const lo = label.toLowerCase();
+    const i = lo.indexOf(t);
+    if (i < 0) return [{ text: label, style: {} }];
+    const hit = { color: 'var(--ds-color-brand-regular)', fontWeight: 700 };
+    const out = [];
+    if (i > 0) out.push({ text: label.slice(0, i), style: {} });
+    out.push({ text: label.slice(i, i + t.length), style: hit });
+    if (i + t.length < label.length) out.push({ text: label.slice(i + t.length), style: {} });
+    return out;
+  }
+
+  matchFlat(q) {
+    const t = (q || '').trim().toLowerCase();
+    if (!t) return [];
+    const out = [];
+    this.cats.forEach(c => c.items.forEach(it => { if (it.label.toLowerCase().includes(t)) out.push(it); }));
+    return out;
+  }
+
+  pressChar(c) { this.setState(s => ({ query: s.query + (s.shift ? c.toUpperCase() : c), shift: false })); }
+  backspace() { this.setState(s => ({ query: s.query.slice(0, -1) })); }
+  shiftToggle() { this.setState(s => ({ shift: !s.shift })); }
+  onInput(e) { const v = e.target.value; this.setState({ query: v, phase: 'input' }); }
+  clearQuery() { this.setState({ query: '' }); }
+
+  commit(term) {
+    const t = (term || '').trim();
+    if (!t) return;
+    clearTimeout(this._t);
+    this.setState({ committed: t, phase: 'loading' });
+    this._t = setTimeout(() => {
+      if (!this.state.online) { this.setState({ phase: 'error' }); return; }
+      const has = this.matchFlat(t).length > 0;
+      this.setState({ phase: has ? 'results' : 'noresult' });
+    }, 950);
+  }
+
+  submit() { this.commit(this.state.query); }
+  tapTerm(t) { this.setState({ query: t }); this.commit(t); }
+  retry() { this.commit(this.state.committed); }
+
+  back() {
+    window.location.href = '/';
+  }
+  reopen() { this.setState({ exited: false, query: '', phase: 'input' }); }
+
+  clearHistory() { this.setState({ recent: [], expandedRecent: false }); }
+  expandMore() { this.setState({ expandedRecent: true }); }
+  reset() {
+    clearTimeout(this._t);
+    this.setState({
+      query: '', phase: 'input', committed: '', shift: false, exited: false, expandedRecent: false,
+      hasHistory: this.props.startWithHistory !== undefined ? this.props.startWithHistory : true,
+      online: this.props.networkOnline !== undefined ? this.props.networkOnline : true,
+      recent: ['Ökostrom wechseln', 'Tahnsjsfjk', 'Gasverg', 'Zahnzusatzversicherung', 'Kfz Versicherung', 'Hausratversicherung', 'Handytarif'],
+    });
+  }
+
+  renderVals() {
+    const s = this.state;
+    const q = s.query;
+    const qt = q.trim();
+    const inputPhase = s.phase === 'input' && !s.exited;
+
+    let groups = [];
+    if (qt !== '') {
+      groups = this.cats.map(c => ({
+        name: c.name,
+        items: c.items
+          .filter(it => it.label.toLowerCase().includes(qt.toLowerCase()))
+          .map(it => ({ ...it, segs: this.segs(it.label, q), go: () => this.tapTerm(it.label) })),
+      })).filter(g => g.items.length > 0);
+    }
+    const hasMatches = groups.length > 0;
+
+    const isInitial = inputPhase && qt === '';
+    const isTyping = inputPhase && qt !== '' && hasMatches;
+    const isNoResultInput = inputPhase && qt !== '' && !hasMatches;
+
+    const flat = this.matchFlat(s.committed);
+    const resultList = flat.map(it => ({ ...it, go: () => this.tapTerm(it.label) }));
+
+    const rec = s.recent;
+    const vis = s.expandedRecent ? rec : rec.slice(0, 5);
+    const recentChips = vis.map(l => ({ label: l, go: () => this.tapTerm(l) }));
+
+    const seg = (on) => ({
+      padding: '6px 16px', fontSize: '13px', cursor: 'pointer',
+      fontWeight: on ? 700 : 400,
+      color: on ? 'var(--ds-color-brand-regular)' : 'var(--ds-color-neutral70)',
+      background: on ? 'var(--ds-color-brand-light)' : '#fff',
+    });
+
+    const mk = (chars, nums) => chars.split('').map((c, i) => ({
+      label: c.toUpperCase(), num: nums ? nums[i] : '', press: () => this.pressChar(c),
+    }));
+
+    return {
+      query: q,
+      showControls: this.props.showControls !== false,
+      isExited: s.exited,
+      inSearch: !s.exited,
+      showKeyboard: inputPhase,
+      showClose: inputPhase && q.length > 0,
+
+      isInitial,
+      isTyping,
+      isNoResult: isNoResultInput || (!s.exited && s.phase === 'noresult'),
+      isLoading: !s.exited && s.phase === 'loading',
+      isError: !s.exited && s.phase === 'error',
+      isResults: !s.exited && s.phase === 'results',
+
+      groups,
+      resultList,
+      resultCount: resultList.length,
+      resultTerm: s.committed,
+
+      showRecent: s.hasHistory && rec.length > 0,
+      recentChips,
+      showMoreChip: !s.expandedRecent && rec.length > 5,
+      moreCount: rec.length - 5,
+
+      suggested: [{ label: 'Strom mit Wechselbonus', icon: 'discount-percent-outlined', go: () => this.tapTerm('Strom mit Wechselbonus') }],
+      trending: [
+        { label: 'Ökostrom', icon: 'leaf-outlined', go: () => this.tapTerm('Ökostrom') },
+        { label: 'Zahnzusatz', icon: 'tooth-outlined', go: () => this.tapTerm('Zahnzusatz') },
+      ],
+
+      kb1: mk('qwertyuiop', '1234567890'),
+      kb2: mk('asdfghjkl'),
+      kb3: mk('zxcvbnm'),
+      pressComma: () => this.pressChar(','),
+      pressDot: () => this.pressChar('.'),
+      pressSpace: () => this.pressChar(' '),
+      shiftToggle: () => this.shiftToggle(),
+      backspace: () => this.backspace(),
+      submit: () => this.submit(),
+      onInput: (e) => this.onInput(e),
+      clearQuery: () => this.clearQuery(),
+      back: () => this.back(),
+      reopen: () => this.reopen(),
+      retry: () => this.retry(),
+      clearHistory: () => this.clearHistory(),
+      expandMore: () => this.expandMore(),
+      reset: () => this.reset(),
+      noop: () => {},
+
+      histOnStyle: seg(s.hasHistory),
+      histOffStyle: seg(!s.hasHistory),
+      histOnSet: () => this.setState({ hasHistory: true }),
+      histOffSet: () => this.setState({ hasHistory: false, expandedRecent: false }),
+      netOnStyle: seg(s.online),
+      netOffStyle: seg(!s.online),
+      netOnSet: () => this.setState({ online: true }),
+      netOffSet: () => this.setState({ online: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
